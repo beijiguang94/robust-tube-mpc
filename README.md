@@ -1,3 +1,6 @@
+# Summary
+This repository is only for linear systems with convex constraints on states/control/bounded disturbance. Besides, if the dimension of the system is larger than 3, the calculation of mRPI set becomes quite difficult.
+
 # Robust Model Predictive Control Using Tube
 This repository includes examples for the tube model predictive control (tube-MPC)[1] as well as the generic model predictive control (MPC) written in MATLAB.
 
