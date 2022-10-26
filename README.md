@@ -24,7 +24,7 @@ Now that you can see that the green nominal trajectory starting from the bottom 
 
 Let me give some important details. The red region `Xc` that contains the pink region `Xc-Z` is the state constraint that we give first. However, considering the uncertainty, the tube-MPC designs the nominal trajectory to be located inside `Xc-Z`, which enables to put "tube" around the nominal trajectory such that the tube is also contained in `Xc-Z`. Of course, the input sequence associated with the nominal trajectory is inside of `Uc-KZ`. 
 
-## Disturbance invariant set
+## Disturbance invariant set (aka robust positively invanriant set [2])
 I think one may get stuck at computation of what paper [1] called "disturbance invariant set". The disturbance invariant set is an infinite [Minkowski addition](https://en.wikipedia.org/wiki/Minkowski_addition) `Z = W ⨁ Ak*W ⨁ Ak^2*W...`, where ⨁ denotes Minkowski addition. Because it's an infinite sum of Minkowski addition, computing Z analytically is intractable. In [2], Racovic proposed a method to efficiently compute an outer approximiation of Z, which seems to be heavily used in MPC community. In this repository, computation of Z takes place in the constructor of `DisturbanceLinearSystem` class. To understand how Z guarantee the robustness, running `example/example_dist_inv_set.m` may help you.
 
 ## Maximum positively invariant set
